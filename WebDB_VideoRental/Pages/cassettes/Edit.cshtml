@@ -1,0 +1,70 @@
+﻿@page
+@model WebDB_VideoRental.Pages.cassettes.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>cassette</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="cassette.id" />
+            <div class="form-group">
+                <label asp-for="cassette.name" class="control-label"></label>
+                <input asp-for="cassette.name" class="form-control" />
+                <span asp-validation-for="cassette.name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cassette.description" class="control-label"></label>
+                <input asp-for="cassette.description" class="form-control" />
+                <span asp-validation-for="cassette.description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cassette.producer" class="control-label"></label>
+                <input asp-for="cassette.producer" class="form-control" />
+                <span asp-validation-for="cassette.producer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cassette.country" class="control-label"></label>
+                <input asp-for="cassette.country" class="form-control" />
+                <span asp-validation-for="cassette.country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cassette.MainActor" class="control-label"></label>
+                <input asp-for="cassette.MainActor" class="form-control" />
+                <span asp-validation-for="cassette.MainActor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cassette.DateNote" class="control-label"></label>
+                <input asp-for="cassette.DateNote" class="form-control" />
+                <span asp-validation-for="cassette.DateNote" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cassette.GenreId" class="control-label"></label>
+                <select asp-for="cassette.GenreId" class="form-control" asp-items="ViewBag.GenreId"></select>
+                <span asp-validation-for="cassette.GenreId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cassette.cost" class="control-label"></label>
+                <input asp-for="cassette.cost" class="form-control" />
+                <span asp-validation-for="cassette.cost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

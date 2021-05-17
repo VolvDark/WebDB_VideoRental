@@ -1,0 +1,89 @@
+﻿@page
+@model WebDB_VideoRental.Pages.FilReq.IndexModel
+@{
+}
+<div class="accordion" id="accordionExample">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link text-dark" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Запросы
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+                <a class="nav-link text-dark" asp-area="" asp-page="Request/PerDep">Отдел кадров</a><br />
+                <a class="nav-link text-dark" asp-area="" asp-page="Request/Cassetts">Кассеты</a><br />
+                <a class="nav-link text-dark" asp-area="" asp-page="Request/CassettesOnHand">Кассеты на руках</a>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link text-dark" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Фильтры
+                </button>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+                <form>
+                    Отобразить сотрудников по должностям:
+                    <select class="form-control-sm" asp-items="Model.SelPosition" name="id">
+                        <option value="-1">не выбрано</option>
+                    </select>
+                    <button asp-area="" asp-page="Filter/FilterPosition" class="btn btn-primary">Отфильтровать</button>
+                </form>
+                <br />
+                <form>
+                    Отобразить кассеты по жанру:
+                    <select class="form-control-sm" asp-items="Model.SelGenre" name="id">
+                        <option value="-1">не выбрано</option>
+                    </select>
+                    <button asp-area="" asp-page="Filter/FilterGenre" class="btn btn-primary">Отфильтровать</button>
+                </form>
+                <br />
+                <form>
+                    Год фильма:
+                    <input type="number" name="date" />
+                    <button asp-area="" asp-page="Filter/FilterYear" class="btn btn-primary">Отфильтровать</button>
+                </form>
+                <br />
+                <form>
+                    Отобразить фильмы по актеру:
+                    <select class="form-control-sm" asp-items="Model.SelActor" name="id">
+                        <option value="-1">не выбрано</option>
+                    </select>
+                    <button asp-area="" asp-page="Filter/FilterActor" class="btn btn-primary">Отфильтровать</button>
+                </form>
+                <br />
+                <form>
+                    Отобразить кассеты по клиенту:
+                    <select class="form-control-sm" asp-items="Model.SelActor" name="id">
+                        <option value="-1">не выбрано</option>
+                    </select>
+                    <button asp-area="" asp-page="Filter/FilterClient" class="btn btn-primary">Отфильтровать</button>
+                </form>
+                <br />
+                <form>
+                    Отобразить (не) оплаченные кассеты:
+                    <select class="form-control-sm" asp-items="Model.SelPayment" name="id">
+                        <option value="-1">не выбрано</option>
+                    </select>
+                    <button asp-area="" asp-page="Filter/FilterPayment" class="btn btn-primary">Отфильтровать</button>
+                </form>
+                <br />
+                <form>
+                    Отобразить (не) сданные кассеты:
+                    <select class="form-control-sm" asp-items="Model.SelHanded" name="id">
+                        <option value="-1">не выбрано</option>
+                    </select>
+                    <button asp-area="" asp-page="Filter/FilterHanded" class="btn btn-primary">Отфильтровать</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

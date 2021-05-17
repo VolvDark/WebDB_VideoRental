@@ -1,0 +1,91 @@
+﻿@page
+@model WebDB_VideoRental.Pages.clients.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>client</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.phone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.PassData)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.PassData)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.DatePickup)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.DatePickup)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.DateReturn)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.DateReturn)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.IsPayment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.IsPayment)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.IsReturn)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.IsReturn)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.CassetteID1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.CassetteID1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.CassetteID2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.CassetteID2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.CassetteID3)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.CassetteID3)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.Employee)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.Employee.id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.client.id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

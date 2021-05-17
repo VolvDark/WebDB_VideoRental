@@ -1,0 +1,49 @@
+﻿@page
+@model WebDB_VideoRental.Pages.positions.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>position</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="position.name" class="control-label"></label>
+                <input asp-for="position.name" class="form-control" />
+                <span asp-validation-for="position.name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="position.salary" class="control-label"></label>
+                <input asp-for="position.salary" class="form-control" />
+                <span asp-validation-for="position.salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="position.duties" class="control-label"></label>
+                <input asp-for="position.duties" class="form-control" />
+                <span asp-validation-for="position.duties" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="position.requirements" class="control-label"></label>
+                <input asp-for="position.requirements" class="form-control" />
+                <span asp-validation-for="position.requirements" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

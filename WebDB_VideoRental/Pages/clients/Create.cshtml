@@ -1,0 +1,88 @@
+﻿@page
+@model WebDB_VideoRental.Pages.clients.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>client</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="client.name" class="control-label"></label>
+                <input asp-for="client.name" class="form-control" />
+                <span asp-validation-for="client.name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="client.address" class="control-label"></label>
+                <input asp-for="client.address" class="form-control" />
+                <span asp-validation-for="client.address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="client.phone" class="control-label"></label>
+                <input asp-for="client.phone" class="form-control" />
+                <span asp-validation-for="client.phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="client.PassData" class="control-label"></label>
+                <input asp-for="client.PassData" class="form-control" />
+                <span asp-validation-for="client.PassData" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="client.DatePickup" class="control-label"></label>
+                <input asp-for="client.DatePickup" class="form-control" />
+                <span asp-validation-for="client.DatePickup" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="client.DateReturn" class="control-label"></label>
+                <input asp-for="client.DateReturn" class="form-control" />
+                <span asp-validation-for="client.DateReturn" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="client.IsPayment" /> @Html.DisplayNameFor(model => model.client.IsPayment)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="client.IsReturn" /> @Html.DisplayNameFor(model => model.client.IsReturn)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="client.CassetteID1" class="control-label"></label>
+                <input asp-for="client.CassetteID1" class="form-control" />
+                <span asp-validation-for="client.CassetteID1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="client.CassetteID2" class="control-label"></label>
+                <input asp-for="client.CassetteID2" class="form-control" />
+                <span asp-validation-for="client.CassetteID2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="client.CassetteID3" class="control-label"></label>
+                <input asp-for="client.CassetteID3" class="form-control" />
+                <span asp-validation-for="client.CassetteID3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="client.EmployeeID" class="control-label"></label>
+                <select asp-for="client.EmployeeID" class ="form-control" asp-items="ViewBag.EmployeeID"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

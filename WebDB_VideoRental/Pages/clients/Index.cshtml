@@ -1,0 +1,102 @@
+﻿@page
+@model WebDB_VideoRental.Pages.clients.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.client[0].name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.client[0].address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.client[0].phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.client[0].PassData)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.client[0].DatePickup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.client[0].DateReturn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.client[0].IsPayment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.client[0].IsReturn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.client[0].CassetteID1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.client[0].CassetteID2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.client[0].CassetteID3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.client[0].Employee)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.client) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PassData)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatePickup)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateReturn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsPayment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsReturn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CassetteID1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CassetteID2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CassetteID3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.id)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

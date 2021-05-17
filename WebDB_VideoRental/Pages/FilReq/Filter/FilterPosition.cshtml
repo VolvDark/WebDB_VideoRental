@@ -1,0 +1,29 @@
+﻿@page
+@model WebDB_VideoRental.Pages.FilReq.Filter.FilterPositionModel
+@{
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.employee[0].name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.employee[0].Position)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.employee)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Position.name)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

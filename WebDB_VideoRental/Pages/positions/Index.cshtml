@@ -1,0 +1,54 @@
+﻿@page
+@model WebDB_VideoRental.Pages.positions.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.position[0].name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.position[0].salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.position[0].duties)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.position[0].requirements)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.position) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.duties)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.requirements)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
